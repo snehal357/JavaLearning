@@ -7,16 +7,22 @@ public class Main {
         int level = 5;
         int bonus = 500;
 
-        calcScore(gameOver, score, level, bonus);
+        int finalScore;
+
+        finalScore = calcScore(gameOver, score, level, bonus);
+
+        System.out.println("From Main, Final Score: "+ finalScore);
 
         score = 10000;
         level = 8;
         bonus = 800;
 
-        calcScore(gameOver, score, level, bonus);
+        finalScore = calcScore(gameOver, score, level, bonus);
+
+        System.out.println("From Main, Final Score: "+ finalScore);
     }
 
-    public static void calcScore(boolean gameOver, int score, int level, int bonus){
+    public static int calcScore(boolean gameOver, int score, int level, int bonus){
 
         int finalScore = score;
 
@@ -24,7 +30,9 @@ public class Main {
             finalScore += (level * bonus);
             finalScore += 1000;
             System.out.println("Your final Score was : " + finalScore);
-        }
 
+
+        }
+        return finalScore;
     }
 }
